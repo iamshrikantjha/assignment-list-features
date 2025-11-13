@@ -2,7 +2,7 @@
  * @file seed.ts
  * @description Simple data seeding utility to populate the database with baseline entities.
  */
-
+import 'dotenv/config';
 import { connectToDatabase, disconnectFromDatabase } from '../src/config/database';
 import { MovieModel } from '../src/models/Movie';
 import { TVShowModel } from '../src/models/TVShow';

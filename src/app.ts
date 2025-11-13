@@ -23,7 +23,8 @@ export const buildApp = (): express.Application => {
     })
   );
 
-  app.use(compression());
+  // compression() can have typing mismatches with some @types packages; cast through unknown to silence TS.
+  app.use((compression() as unknown) as express.RequestHandler);
   app.use(cors());
   app.use(express.json({ limit: '1mb' }));
   app.use(requestLogger);

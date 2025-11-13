@@ -35,7 +35,11 @@ afterAll(async () => {
 });
 
 afterEach(async () => {
-  const collections = await mongoose.connection.db.collections();
+  const db = mongoose.connection.db;
+  // In some teardown cases the connection's db may be undefined — guard against that.
+  if (!db) return;
+
+  const collections = await db.collections();
   await Promise.all(collections.map((collection) => collection.deleteMany({})));
 });
 
