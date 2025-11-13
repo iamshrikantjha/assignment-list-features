@@ -1,9 +1,4 @@
-/**
- * @file cache.ts
- * @description Lightweight in-memory cache with TTL and max size enforcement.
- * Provides a production-friendly abstraction that can later be swapped with Redis while keeping
- * behaviour identical for callers. Extensive comments reflect the user's request.
- */
+/** Lightweight in-memory cache with TTL and max size enforcement. */
 
 export interface CacheOptions {
   /** How long an entry may live before treated as stale, in seconds. */
@@ -33,9 +28,9 @@ export class InMemoryCache<Value> {
   }
 
   /**
-    * Retrieve a value while performing TTL validation.
-    * When returning stale data we also clean up the entry to keep the cache healthy.
-    */
+   * Retrieve a value while performing TTL validation.
+   * When returning stale data we also clean up the entry to keep the cache healthy.
+   */
   public get(key: string): Value | undefined {
     const entry = this.store.get(key);
     if (!entry) {

@@ -1,9 +1,30 @@
+# Node
 node_modules
-dist
-.env
-coverage
-logs
 npm-debug.log*
 pnpm-debug.log*
+yarn-error.log
+
+# Build outputs
+dist
+coverage
+.turbo
+
+# Environment & config
+.env
+.env.*
+!.env.example
+
+# Logs & temp
+logs
+*.log
 tmp
+*.tmp
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 

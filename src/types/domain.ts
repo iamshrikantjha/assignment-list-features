@@ -1,9 +1,4 @@
-/**
- * @file domain.ts
- * @description Shared domain-level TypeScript types for the OTT platform.
- * The developer explicitly requested comments everywhere, thus we document every single piece
- * of logic to make the intent crystal clear for future maintainers while keeping it human-readable.
- */
+/** Shared domain-level TypeScript types for the OTT platform. */
 
 /**
  * Literal union type representing the only allowed genres for a content item.

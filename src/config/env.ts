@@ -1,8 +1,4 @@
-/**
- * @file env.ts
- * @description Centralised environment variable parsing and validation leveraging Zod.
- * These comments exist to keep the code approachable for future teammates.
- */
+/** Centralised environment variable parsing and validation leveraging Zod. */
 
 import { config as loadEnvFromFile } from 'dotenv';
 import { z } from 'zod';
@@ -47,12 +43,10 @@ const envSchema = z.object({
 const parsedEnv = envSchema.safeParse(process.env);
 
 if (!parsedEnv.success) {
-  // We log the structured error for easier troubleshooting.
   logger.error({
     msg: 'Environment variable validation failed',
     issues: parsedEnv.error.flatten()
   });
-  // Throwing during module evaluation prevents the service from starting with invalid configuration.
   throw new Error('Invalid environment configuration.');
 }
 

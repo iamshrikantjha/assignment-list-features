@@ -1,8 +1,4 @@
-/**
- * @file logger.ts
- * @description Pino-based logger with opinionated defaults suited for production workloads.
- * Additional inline comments clarify each configuration knob per the user's request.
- */
+/** Pino-based logger with opinionated defaults suited for production workloads. */
 
 import pino from 'pino';
 
